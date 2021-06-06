@@ -6,11 +6,11 @@
     "doc": "docs"
   },
   "dependencies": {
-    "@bower_components/bootstrap-sass": "twbs/bootstrap-sass#^3.3.7",
-    "@bower_components/cookieconsent": "silktide/cookieconsent2#^3.0.6",
-    "@bower_components/jquery": "jquery/jquery-dist#~1",
-    "@bower_components/slick-carousel": "kenwheeler/slick#~1.4.1",
-    "@bower_components/slick-lightbox": "mreq/slick-lightbox#^0.2.10"
+    "@bower_components/bootstrap-sass": "twbs/bootstrap-sass",
+    "@bower_components/cookieconsent": "silktide/cookieconsent2",
+    "@bower_components/jquery": "jquery/jquery-dist",
+    "@bower_components/slick-carousel": "kenwheeler/slick",
+    "@bower_components/slick-lightbox": "mreq/slick-lightbox"
   },
   "devDependencies": {
     "grunt": "^1.0.2",
