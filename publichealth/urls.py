@@ -2,6 +2,9 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
+from django.urls import path
+from django.views.generic.base import TemplateView
+
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
@@ -25,6 +28,9 @@ urlpatterns = [
     url(r'^search/$', search_views.search, name='search'),
 
     url('^sitemap\.xml$', sitemap),
+
+    path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+
 ]
 
 
