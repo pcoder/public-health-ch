@@ -2,25 +2,25 @@
 # yarn lockfile v1
 
 
-"@bower_components/bootstrap-sass@twbs/bootstrap-sass#^3.3.7":
+"@bower_components/bootstrap-sass@twbs/bootstrap-sass":
   version "3.4.1"
   resolved "https://codeload.github.com/twbs/bootstrap-sass/tar.gz/b34765d8a6aa775816c59012b2d6b30c4c66a8e9"
 
-"@bower_components/cookieconsent@silktide/cookieconsent2#^3.0.6":
-  version "3.1.1"
-  resolved "https://codeload.github.com/silktide/cookieconsent2/tar.gz/2b3191a39c7df4479a1f23053e3b31424089520e"
+"@bower_components/cookieconsent@silktide/cookieconsent2":
+  version "4.0.0"
+  resolved "https://codeload.github.com/silktide/cookieconsent2/tar.gz/af675e99ea839c224d95a4122dd208e2cee48116"
 
-"@bower_components/jquery@jquery/jquery-dist#~1":
-  version "1.12.4"
-  resolved "https://codeload.github.com/jquery/jquery-dist/tar.gz/5e89585e0121e72ff47de177c5ef604f3089a53d"
+"@bower_components/jquery@jquery/jquery-dist":
+  version "3.6.0"
+  resolved "https://codeload.github.com/jquery/jquery-dist/tar.gz/e786e3d9707ffd9b0dd330ca135b66344dcef85a"
 
-"@bower_components/slick-carousel@kenwheeler/slick#~1.4.1":
-  version "1.4.1"
-  resolved "https://codeload.github.com/kenwheeler/slick/tar.gz/e3fc23908d647bb2471c00c316ad57b15667975d"
+"@bower_components/slick-carousel@kenwheeler/slick":
+  version "1.8.1"
+  resolved "https://codeload.github.com/kenwheeler/slick/tar.gz/7daf56cb83e1365e7b7b0ef551f4a6b6b82a0f78"
 
-"@bower_components/slick-lightbox@mreq/slick-lightbox#^0.2.10":
+"@bower_components/slick-lightbox@mreq/slick-lightbox":
   version "0.2.12"
-  resolved "https://codeload.github.com/mreq/slick-lightbox/tar.gz/30459914338d0a9ae6ab328c7e12166997da00a2"
+  resolved "https://codeload.github.com/mreq/slick-lightbox/tar.gz/e39c898022b10ab22a351123f100a125b79da1f7"
 
 abbrev@1:
   version "1.1.1"
