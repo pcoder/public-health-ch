@@ -17,6 +17,7 @@ from ..util import TranslatedField
 
 class ContactFormField(AbstractFormField):
     page = ParentalKey('ContactForm', related_name='form_fields')
+    clean_name = CharField(blank=True, default='', help_text='Safe name of the form field, the label converted to ascii_snake_case', max_length=255, verbose_name='name')
 
 class ContactForm(AbstractEmailForm):
     intro = RichTextField(default='', blank=True)
