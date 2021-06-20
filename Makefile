@@ -1,5 +1,3 @@
-export COMPOSE_FILE=./docker-compose.yml
-export COMPOSE_PROJECT_NAME=publichealth
 export EMAIL=change_me@localhost.localhost
 
 default: build
@@ -20,11 +18,19 @@ setup:
 	. /home/app/pyvenv/bin/activate && ./manage.py migrate
 	. /home/app/pyvenv/bin/activate && ./manage.py createsuperuser --username admin --email $(EMAIL) --noinput
 
+rebuild:
+    mv node_modules /tmp
+    yarn install
+    cp -rf node_modules/@bower_components/* /home/app/app/publichealth/static/libs
+
+restart-uwsgi:
+    sudo /etc/init.d/uwsgi restart
+
 compress:
 	. /home/app/pyvenv/bin/activate && ./manage.py collectstatic --noinput -i media
 	. /home/app/pyvenv/bin/activate && ./manage.py compress
 
-release: rebuild compress run
+release: rebuild compress restart-uwsgi
 
 reindex:
 	. /home/app/pyvenv/bin/activate && ./manage.py update_index
@@ -45,7 +51,7 @@ backup-data:
 
 backup-images:
 	echo "Backing up images ..."
-	sudo chown -R ansible media
+	sudo chown -R app:app media
 	zip -ruq ~/media.zip media
 
 backup: backup-data backup-images
