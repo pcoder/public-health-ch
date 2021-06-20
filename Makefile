@@ -19,7 +19,7 @@ setup:
 	. /home/app/pyvenv/bin/activate && ./manage.py createsuperuser --username admin --email $(EMAIL) --noinput
 
 rebuild:
-	rm -rf node_modules /tmp
+	rm -rf node_modules
 	yarn install
 	cp -rf node_modules/@bower_components/* /home/app/app/publichealth/static/libs
 
