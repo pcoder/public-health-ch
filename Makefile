@@ -19,12 +19,12 @@ setup:
 	. /home/app/pyvenv/bin/activate && ./manage.py createsuperuser --username admin --email $(EMAIL) --noinput
 
 rebuild:
-    mv node_modules /tmp
-    yarn install
-    cp -rf node_modules/@bower_components/* /home/app/app/publichealth/static/libs
+	mv node_modules /tmp
+	yarn install
+	cp -rf node_modules/@bower_components/* /home/app/app/publichealth/static/libs
 
 restart-uwsgi:
-    sudo /etc/init.d/uwsgi restart
+	sudo /etc/init.d/uwsgi restart
 
 compress:
 	. /home/app/pyvenv/bin/activate && ./manage.py collectstatic --noinput -i media
