@@ -1,6 +1,6 @@
 export EMAIL=change_me@localhost.localhost
 
-default: build
+default: release
 
 local-loaddata:
 	sed -i 's/\"is_default_site\": true/\"is_default_site\": false/g' publichealth.home.json
