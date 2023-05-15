@@ -31,6 +31,13 @@
 {% endfor %}
 </div>
 
+{% if page.html_content %}
+<!-- Any other content -->
+<div class="article-body">
+  {{ page.html_content|richtext }}
+</div>
+{% endif %}
+
 <!-- Infoblocks -->
 <div class="row infoblocks">
   {% for block in page.trans_body %}

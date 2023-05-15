@@ -14,7 +14,6 @@ from wagtail.core.blocks import StructBlock, CharBlock, URLBlock, RichTextBlock,
 from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, InlinePanel, MultiFieldPanel
-from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
@@ -186,8 +185,7 @@ class ArticlePage(Page):
         ('info', InfoBlock(icon='help')),
         ('media', ChoiceBlock(choices=[
             ('gallery', 'Image gallery'),
-        ], icon='media')),
-        ('iframe', EmbedBlock())
+        ], icon='media'))
     ], null=True, blank=True)
     body_fr = StreamField([
         ('paragraph', RichTextBlock()),
@@ -195,8 +193,7 @@ class ArticlePage(Page):
         ('info', InfoBlock(icon='help')),
         ('media', ChoiceBlock(choices=[
             ('gallery', 'Image gallery'),
-        ], icon='media')),
-        ('iframe', EmbedBlock())
+        ], icon='media'))
     ], null=True, blank=True)
     body_en = StreamField([
         ('paragraph', RichTextBlock()),
@@ -204,8 +201,7 @@ class ArticlePage(Page):
         ('info', InfoBlock(icon='help')),
         ('media', ChoiceBlock(choices=[
             ('gallery', 'Image gallery'),
-        ], icon='media')),
-        ('iframe', EmbedBlock())
+        ], icon='media'))
     ], null=True, blank=True)
     trans_body = TranslatedField(
         'body_de',
@@ -217,6 +213,8 @@ class ArticlePage(Page):
 
     on_homepage = models.BooleanField(default=False, verbose_name="Featured",
         help_text="Auf der Frontpage anzeigen")
+
+    html_content = RichTextField(blank=True)
 
     feed_image = models.ForeignKey(
         'wagtailimages.Image',
@@ -259,6 +257,9 @@ class ArticlePage(Page):
             ImageChooserPanel('feed_image'),
         ], heading="Images"),
         StreamFieldPanel('gallery'),
+    ]
+    content_panels = Page.content_panels + [
+        FieldPanel('html_content', classname='full'),
     ]
     promote_panels = [
         InlinePanel('related_links', label="Links"),
