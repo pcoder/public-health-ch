@@ -14,6 +14,7 @@ from wagtail.core.blocks import StructBlock, CharBlock, URLBlock, RichTextBlock,
 from wagtail.core.models import Page, Orderable
 from wagtail.core.fields import StreamField, RichTextField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, InlinePanel, MultiFieldPanel
+from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
@@ -185,7 +186,8 @@ class ArticlePage(Page):
         ('info', InfoBlock(icon='help')),
         ('media', ChoiceBlock(choices=[
             ('gallery', 'Image gallery'),
-        ], icon='media'))
+        ], icon='media')),
+        ('iframe', EmbedBlock())
     ], null=True, blank=True)
     body_fr = StreamField([
         ('paragraph', RichTextBlock()),
@@ -193,7 +195,8 @@ class ArticlePage(Page):
         ('info', InfoBlock(icon='help')),
         ('media', ChoiceBlock(choices=[
             ('gallery', 'Image gallery'),
-        ], icon='media'))
+        ], icon='media')),
+        ('iframe', EmbedBlock())
     ], null=True, blank=True)
     body_en = StreamField([
         ('paragraph', RichTextBlock()),
@@ -201,7 +204,8 @@ class ArticlePage(Page):
         ('info', InfoBlock(icon='help')),
         ('media', ChoiceBlock(choices=[
             ('gallery', 'Image gallery'),
-        ], icon='media'))
+        ], icon='media')),
+        ('iframe', EmbedBlock())
     ], null=True, blank=True)
     trans_body = TranslatedField(
         'body_de',
